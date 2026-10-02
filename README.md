@@ -1,4 +1,4 @@
-# ⚡ Apex 16 — 16-Week AI/ML Execution Blueprint
+# ⚡ 16WEEKS — AI/ML Execution Blueprint
 
 A minimalist, high-accountability execution tracker designed to bridge foundational data analysis into production anomaly detection and applied machine learning.
 
