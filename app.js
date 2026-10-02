@@ -828,16 +828,16 @@ function renderWeekContent(weekNumber) {
     if (isDone) doneInWeek++;
 
     const card = document.createElement("div");
-    card.className = `task-card flex items-start gap-3.5 ${isDone ? "task-done" : ""}`;
+    card.className = `task-card flex items-start gap-4 ${isDone ? "task-done" : ""}`;
     
     card.innerHTML = `
       <input type="checkbox" class="custom-checkbox" id="${t.id}" ${isDone ? "checked" : ""}>
       <div class="flex-1">
-        <div class="flex items-center justify-between gap-2 mb-1">
-          <label for="${t.id}" class="task-title text-sm font-semibold cursor-pointer">${t.title}</label>
+        <div class="flex items-center justify-between gap-3 mb-1.5">
+          <label for="${t.id}" class="task-title text-sm font-bold text-slate-100 cursor-pointer select-none hover:text-blue-300 transition-colors">${t.title}</label>
           <span class="tag-badge tag-${t.tagType}">${t.tag}</span>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">${t.desc}</p>
+        <p class="text-xs text-slate-400 leading-relaxed font-normal">${t.desc}</p>
       </div>
     `;
 

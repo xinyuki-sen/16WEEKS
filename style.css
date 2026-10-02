@@ -1,199 +1,246 @@
-/* ================= RESET & CORE STYLES ================= */
+/* ================= CORE & BASE LAYOUT ================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  color: #f1f5f9;
-  background-color: #070a11;
+html, body {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+  background-color: #060910;
+  color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Scrollbar */
+/* Custom Sleek Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.4);
+  background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(51, 65, 85, 0.6);
+  background: rgba(51, 65, 85, 0.5);
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.8);
 }
 
-/* Sidebar Week Buttons */
+/* ================= SIDEBAR & NAVIGATION ================= */
+.sidebar-container {
+  background-color: #0b0f17;
+  border-right: 1px solid #1e293b;
+  min-width: 288px;
+  max-width: 288px;
+}
+
+.phase-group-header {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  padding: 10px 10px 4px;
+}
+
+/* Nav Week Buttons */
 .nav-week-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 8px 12px;
+  padding: 7px 11px;
   border-radius: 12px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: #94a3b8;
   background: transparent;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: left;
 }
 
 .nav-week-btn:hover {
-  background: rgba(30, 41, 59, 0.6);
-  color: #f8fafc;
+  background: rgba(30, 41, 59, 0.7);
+  color: #ffffff;
+  transform: translateX(2px);
 }
 
 .nav-week-btn.active {
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: #ffffff;
-  font-weight: 600;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-  border-color: rgba(59, 130, 246, 0.5);
+  font-weight: 700;
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
 }
 
 .nav-week-btn.completed {
-  border-color: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.25);
 }
 
 .nav-week-btn .week-pill {
   font-size: 10px;
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: 9999px;
   font-weight: 700;
-  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .nav-week-btn.active .week-pill {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.22);
   color: #ffffff;
 }
 
 .nav-week-btn:not(.active) .week-pill {
-  background: rgba(30, 41, 59, 0.8);
+  background: rgba(15, 23, 42, 0.9);
   color: #94a3b8;
-}
-
-/* Phase Headers in Sidebar */
-.phase-group-header {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748b;
-  padding: 12px 10px 4px;
-}
-
-/* Task Cards */
-.task-card {
-  background: rgba(15, 23, 42, 0.6);
   border: 1px solid #1e293b;
-  border-radius: 16px;
-  padding: 16px;
-  transition: all 0.2s ease;
+}
+
+/* Top Nav Arrow Buttons */
+.nav-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-arrow-btn:hover:not(:disabled) {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+/* ================= BANNER & CARDS ================= */
+.banner-gradient {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.25) 50%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.premium-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.premium-card:hover {
+  border-color: #334155;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= TASK CHECKLIST CARDS ================= */
+.task-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 18px 20px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
 .task-card:hover {
-  border-color: #334155;
-  background: rgba(15, 23, 42, 0.85);
-  transform: translateY(-1px);
+  border-color: #3b82f6;
+  background: rgba(15, 23, 42, 0.95);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .task-card.task-done {
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.35);
   background: rgba(6, 78, 59, 0.08);
 }
 
 .task-card.task-done .task-title {
   text-decoration: line-through;
-  color: #94a3b8;
+  color: #64748b;
 }
 
-/* Custom Checkbox */
+/* Custom Checkbox Design */
 .custom-checkbox {
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border: 2px solid #475569;
-  border-radius: 6px;
-  background: #0f172a;
+  border-radius: 7px;
+  background: #090d16;
   cursor: pointer;
   display: inline-grid;
   place-content: center;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .custom-checkbox:hover {
   border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
 }
 
 .custom-checkbox:checked {
-  background: #10b981;
+  background: linear-gradient(135deg, #10b981, #059669);
   border-color: #10b981;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
 }
 
 .custom-checkbox:checked::before {
   content: "";
   width: 10px;
   height: 6px;
-  border-left: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
+  border-left: 2.2px solid #ffffff;
+  border-bottom: 2.2px solid #ffffff;
   transform: rotate(-45deg) translate(1px, -1px);
 }
 
-/* Badge Tags */
+/* ================= BADGES & TAGS ================= */
 .tag-badge {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
-  border-radius: 6px;
+  padding: 3px 9px;
+  border-radius: 9999px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
   letter-spacing: 0.02em;
 }
 
 .tag-blue {
-  background: rgba(59, 130, 246, 0.15);
+  background: rgba(59, 130, 246, 0.12);
   color: #60a5fa;
   border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .tag-emerald {
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(16, 185, 129, 0.12);
   color: #34d399;
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .tag-amber {
-  background: rgba(245, 158, 11, 0.15);
+  background: rgba(245, 158, 11, 0.12);
   color: #fbbf24;
   border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .tag-purple {
-  background: rgba(168, 85, 247, 0.15);
+  background: rgba(168, 85, 247, 0.12);
   color: #c084fc;
   border: 1px solid rgba(168, 85, 247, 0.3);
-}
-
-/* Utility Animations */
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-.animate-ping {
-  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
