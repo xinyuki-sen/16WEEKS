@@ -18,18 +18,18 @@ html, body {
 
 /* Custom Sleek Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(51, 65, 85, 0.5);
+  background: rgba(51, 65, 85, 0.45);
   border-radius: 9999px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.8);
+  background: rgba(100, 116, 139, 0.75);
 }
 
 /* ================= SIDEBAR & NAVIGATION ================= */
@@ -126,24 +126,36 @@ html, body {
   border-color: #334155;
 }
 
+/* Filter Buttons */
+.filter-btn {
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.filter-btn:hover:not(.active) {
+  color: #f8fafc;
+  background: rgba(51, 65, 85, 0.3);
+}
+
 /* ================= BANNER & CARDS ================= */
 .banner-gradient {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.25) 50%, rgba(15, 23, 42, 0.9) 100%);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  backdrop-filter: blur(12px);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 58, 138, 0.28) 50%, rgba(15, 23, 42, 0.92) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.32);
+  backdrop-filter: blur(14px);
 }
 
 .premium-card {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(15, 23, 42, 0.72);
   border: 1px solid #1e293b;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .premium-card:hover {
   border-color: #334155;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* ================= TASK CHECKLIST CARDS ================= */
@@ -151,7 +163,7 @@ html, body {
   background: rgba(15, 23, 42, 0.75);
   border: 1px solid #1e293b;
   border-radius: 18px;
-  padding: 18px 20px;
+  padding: 16px 18px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
@@ -243,4 +255,20 @@ html, body {
   background: rgba(168, 85, 247, 0.12);
   color: #c084fc;
   border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* ================= TOAST NOTIFICATION ================= */
+#toastNotification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ================= MOBILE DRAWER ================= */
+@media (max-width: 1023px) {
+  #mainSidebar.mobile-open {
+    transform: translateX(0) !important;
+  }
+  #mobileBackdrop.active {
+    display: block !important;
+  }
 }

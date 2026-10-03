@@ -1,40 +1,74 @@
-# ⚡ 16WEEKS — AI/ML Execution Blueprint
+# ⚡ 20WEEKS (v2) — AI/ML Execution Blueprint
 
-A minimalist, high-accountability execution tracker designed to bridge foundational data analysis into production anomaly detection and applied machine learning.
+> **Author:** Rohan Pradhan  
+> **Start Date:** October 5, 2026 • **Target Completion:** Early March 2027  
+> **Hardware Profile:** ASUS TUF Gaming A15 • NVIDIA GeForce RTX 3050 Laptop GPU (4GB VRAM)  
+> **Target Flagship:** Evaluated Retrieval-Augmented Generation (RAG) System  
+> **Total Time Budget:** ~180 Hours (~140h ML/RAG Building + ~40h Java DSA)  
 
-**Live Sprint Start Date:** October 5, 2026  
-**Hardware Profile:** NVIDIA GeForce RTX 3050 (4GB GDDR6 VRAM)  
-**Weekly Time Budget:** 10–12 Hours / Week  
+A high-accountability execution tracker designed to transform foundational data wrangling into an industry-grade, quantitatively evaluated RAG API that separates you from 1,000 generic student portfolio projects.
 
 ---
 
-## 🎯 Target Milestones (The 3 Repositories)
+## ⏱️ Time Budget & Sustainability Matrix
 
-| Phase | Duration | Core Focus | Public Deliverable |
+- **Effort Estimate:** ~180 hours total (~140 hrs Kaggle + project building, ~40 hrs DSA at 3 problems/week in Java).
+- **Plan Shape:** 20 working weeks at ~9 hrs/week, plus **2 flexible exam-light buffer weeks** (~2 hrs/week). Insert buffer weeks wherever end-sems land without compressing syllabus.
+- **Weekly Rhythm:** 4 weekdays of 45–60 min, one 3-hour weekend deep-work block, 30 min Sunday for GitHub/README polish.
+- **Pace Calculator:**
+  - **6 hrs/week:** ~30 weeks (Cut DSA to 2/wk, drop stats refresher in Wks 8 & 9)
+  - **8 hrs/week:** ~22 weeks
+  - **9 hrs/week (Current Plan):** 20 working weeks
+  - **12 hrs/week:** ~15 weeks
+
+---
+
+## 🎯 The 4 Phases & 3 Public Deliverables
+
+| Phase | Duration | Weekly Focus | Deliverable & "Done When" Benchmark |
 | :--- | :--- | :--- | :--- |
-| **Phase 1** | Weeks 1–4 | Git CLI, Pandas, Data Cleaning, SQL Joins & Real EDA | **Repo 1:** Real-world exploratory data analysis report (Non-Titanic) |
-| **Phase 2** | Weeks 5–9 | Scikit-Learn, Pipelines, Cross-Validation & Metric Auditing | **Repo 2:** End-to-end trained model with leakage prevention |
-| **Phase 3** | Weeks 10–14 | NASA C-MAPSS Telemetry, Isolation Forest, Ollama 3B, FastAPI | **Repo 3 (Flagship):** Sensor Anomaly Radar + 60s Video Demo |
-| **Phase 4** | Weeks 15–16 | Resume Alignment, Technical Defense & AICTE/Startup Applications | **Outcome:** 5+ applications submitted + mock defense verified |
+| **Phase 1** | Weeks 1–5 (~35 hrs) | Git CLI, Pandas, Data Cleaning, SQL Joins & Real EDA | **Repo 1:** Real-world exploratory data analysis report (Indian AQI/EV/Zomato, non-toy) + executive README |
+| **Phase 2** | Weeks 6–11 (~42 hrs) | Scikit-Learn, Pipelines, Cross-Validation, Metrics & PCA | **Repo 2:** End-to-end trained model with leakage-free pipeline. **Checkpoint:** Explain overfitting, CV & precision/recall aloud. |
+| **Phase 3** | Weeks 12–18 (~49 hrs) | FAISS/Chroma Retrieval, FastAPI, Grounded Citations, pytest & Docker | **Repo 3 (Flagship):** Evaluated RAG API with 25-question test set, hit-rate benchmark table, failure case analysis & 60-second video demo. |
+| **Phase 4** | Weeks 19–20 (~14 hrs) | Resume v2 Aligned with Repos, 60s Project Pitches & Outreach | **Outcome:** 5+ applications submitted and logged (AICTE, startups, Deloitte). |
 
 ---
 
-## 🛡️ The 3 Iron Execution Rules
+## ⭐ Why the Flagship RAG Project Stands Out
 
-1. **Write the First Draft Yourself:** Use AI strictly to explain, review, and debug. After finishing any module, close the editor and verbally explain every function out loud. If you can't explain it, you don't own it.
-2. **Plan for Slippage:** During college exams, hostel responsibilities, or ambassador duties, drop to a minimum 30 mins/day. Never abandon the streak.
-3. **Verified Repos > Course Certificates:** Hiring teams and technical interviewers test for Git commit history, clean code structure, and live working demos over static completion badges.
+> *"A PDF chatbot is the most common student RAG project. The **evaluation** is what sets yours apart: a 25-question test set, a retrieval hit rate, chunk-size comparisons, and a README showing where it fails."*
+
+1. **Known Corpus:** Uses your own university course notes or syllabus so you can immediately spot hallucinated details.
+2. **Local Hardware Fit:** RTX 3050 (4GB VRAM). Runs **Llama 3.2 3B** locally via Ollama (~2.0 GB VRAM) or Google Gemini Flash API. Embeddings run lightweight on CPU.
+3. **Quantitative Evaluation:** Measures Hit Rate@1, Hit Rate@3, and Mean Reciprocal Rank across 250 vs 500 vs 1000 token chunk sizes.
+4. **Transparent Failure Analysis:** Documents retrieval failure modes and patches them with overlapping chunk strides.
 
 ---
 
-## 🚀 How to Run Locally
+## 🛡️ The 3 Iron Rules
 
-Simply double-click `index.html` or open it with any modern web browser:
+1. **Write the First Draft Yourself:** Use AI strictly to explain and review. After each project, close the editor and verbally explain every function out loud. If you cannot explain it, you do not own it.
+2. **Core vs. Optional (Plan for Slippage):** If you fall behind during exam cycles, **protect**: Pandas, SQL, Intro/Intermediate ML, and the RAG project with its evaluation. Stretch the calendar—never compress.
+3. **Be Honest on Resume:** List only what a public GitHub repository proves. Label AI-assisted projects (like Chrono) as built with AI coding agents.
+
+---
+
+## ⏸️ Deferred Until After Week 20
+
+- JWT authentication, MongoDB, WebSockets and streaming responses, agent guardrails, PyTorch deep learning, cloud deployment. Revisit once the 3 repositories are publicly proven.
+
+---
+
+## 💻 Local Preview & Usage
+
+Double-click `index.html` or run a local Python HTTP server:
 
 ```bash
-# Optional: Serve locally with python
+# Serve locally
 python -m http.server 8080
-# Open http://localhost:8080
+# Open in browser: http://localhost:8080
 ```
 
-All task checklist progress is automatically saved to your browser's `localStorage`.
+- **Keyboard Shortcuts:** `[←]` Previous Week • `[→]` Next Week
+- **Copy Plan:** Click "Copy Plan" in the top bar to get a markdown checklist for your notes.
+- **Persistence:** All completed tasks are preserved in `localStorage`.
